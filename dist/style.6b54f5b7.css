@@ -72,8 +72,8 @@
 
 @media only screen and (max-width: 900px) {
   .book-container {
-    --height: 450px;
-    --width: 330px;
+    --height: 440px;
+    --width: 339px;
     --rotate: -23deg;
     --radii: 5px;
   }
