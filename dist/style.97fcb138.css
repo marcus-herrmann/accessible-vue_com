@@ -1,0 +1,353 @@
+.book-container {
+  --height: 550px;
+  --width: 420px;
+  --rotate: -27deg;
+  --radii: 5px;
+}
+
+.book-container {
+  width: var(--width);
+  height: var(--height);
+  margin: 80px 30px -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+}
+
+.book {
+  transform: rotateY(var(--rotate));
+  position: relative;
+  transform-style: preserve-3d;
+  width: var(--width);
+  height: var(--height);
+  transition: transform 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+}
+
+.book:hover {
+  transform: rotate(0deg);
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(5deg);
+  }
+  100% {
+    transform: rotateY(var(--rotate));
+  }
+}
+.book > :first-child {
+  position: absolute;
+  background: #0d47a1aa;
+  width: var(--width);
+  height: var(--height);
+  border-top-right-radius: var(--radii);
+  border-bottom-right-radius: var(--radii);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+}
+
+.book::before {
+  content: " ";
+  background: #fff;
+  height: calc(var(--height) - 2 * 3px);
+  width: 50px;
+  top: 3px;
+  position: absolute;
+  transform: translateX(calc(var(--width) - 50px / 2 - 3px)) rotateY(90deg) translateX(calc(50px / 2));
+}
+
+.book::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: var(--width);
+  height: var(--height);
+  border-top-right-radius: var(--radii);
+  border-bottom-right-radius: var(--radii);
+  background: #01060f;
+  transform: translateZ(-50px);
+  box-shadow: -10px 0 50px 10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #2b2b2b;
+  line-height: 1.75;
+  font-size: 1.1em;
+}
+
+@keyframes smoothscroll1 {
+  from, to {
+    scroll-behavior: smooth;
+  }
+}
+@keyframes smoothscroll2 {
+  from, to {
+    scroll-behavior: smooth;
+  }
+}
+html {
+  animation: smoothscroll1 1s;
+}
+
+html:focus-within {
+  animation-name: smoothscroll2;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}
+.about a:focus {
+  background: #45576b;
+  color: #fff;
+  padding: 0.1em 0.1em;
+  margin: -0.1em -0.1em;
+  outline-color: transparent;
+}
+
+.wrapper {
+  max-width: 100%;
+  width: 1024px;
+  margin: 0 auto;
+}
+.wrapper--stage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #45576b;
+}
+.wrapper--stage article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  background: #45576b;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn:hover, .btn:focus {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  outline-color: transparent;
+}
+.btn small {
+  font-size: 0.66em;
+  font-style: italic;
+}
+
+.btn--sample {
+  background: #4d6c76;
+}
+
+.btn--cta {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stage {
+  background: #c1e6d8;
+  background-image: linear-gradient(#c1e6d8, #9feebf);
+}
+
+.toc ol ol {
+  margin-bottom: 1.25rem;
+}
+
+.o-list--bare {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.o-list--bare > li {
+  display: inline-block;
+  color: #45576b;
+}
+.toc .o-list--bare > li {
+  width: 100%;
+  font-weight: 700;
+}
+.o-list--bare > li .inner-wrapper {
+  display: grid;
+  grid-template-columns: 4fr 4fr 1fr;
+}
+.o-list--bare p {
+  font-style: italic;
+  font-weight: 400;
+  max-width: 50ch;
+  text-align: right;
+  margin-top: 0;
+}
+
+.about {
+  margin: 3.5rem 0;
+}
+.about--portrait {
+  float: right;
+  max-width: 130px;
+  margin-left: 2rem;
+}
+
+.main-headline {
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.main-copy {
+  margin: 1.75em 0;
+}
+
+.main-buttons .btn--cta {
+  margin-left: 1rem;
+}
+.main-buttons .btn--cta svg {
+  margin-left: 1ch;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-bottom: 0.25em;
+  color: #484848;
+  background: rgba(193, 230, 216, 0.15) linear-gradient(#fff, rgba(159, 238, 191, 0.35));
+  display: inline-block;
+  padding: 0 1ch;
+  transform: rotate(-1deg);
+}
+
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.learnings {
+  margin: 2.5rem 0 3rem 0;
+}
+
+.features {
+  margin: 2.5rem 0 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.features li {
+  display: inline-block;
+  background: rgba(193, 230, 216, 0.15);
+  background-image: linear-gradient(#fff, rgba(159, 238, 191, 0.25));
+  color: #4d6c76;
+  flex: 0 1 25%;
+  line-height: 1.3;
+  padding: 1rem;
+  text-align: center;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+}
+.features li svg {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.big {
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: block;
+}
+
+.buy {
+  color: #45576b;
+  margin: 3.5rem 0;
+  position: relative;
+}
+.buy h2 {
+  color: #2b2b2b;
+  margin-top: 0;
+}
+.buy .stage {
+  padding: 2rem 5rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 215px 1fr;
+  grid-gap: 2rem;
+}
+.buy .cover {
+  max-width: 200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+}
+.buy .link {
+  float: right;
+  font-weight: 700;
+}
+.buy .link:focus {
+  background: #45576b;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin: -0.5em -1em;
+  outline-color: transparent;
+}
+.buy .link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#buy[tabindex="-1"] {
+  outline: 0;
+}
+
+.toc-no {
+  margin-left: 2rem;
+  color: #45576b;
+  line-height: 0.9;
+  font-size: 4rem;
+  padding: 0 1rem;
+  display: inline-block;
+}
+
+footer {
+  background: #45576b;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+footer .footer-nav {
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+footer .footer-nav a:focus {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  outline-color: transparent;
+}
+footer li {
+  margin-left: 2rem;
+}
+footer .legal {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=/style.97fcb138.css.map */

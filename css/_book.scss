@@ -1,0 +1,73 @@
+.book-container {
+  --height: 550px;
+  --width: 420px;
+  --rotate: -27deg;
+  --radii: 5px;
+}
+
+.book-container {
+  width: var(--width);
+  height: var(--height);
+  margin: 80px 30px -80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+
+}
+
+.book {
+  transform: rotateY(var(--rotate));
+  position: relative;
+  transform-style: preserve-3d;
+  width: var(--width);
+  height: var(--height);
+  transition: transform 1s ease;
+  animation: 1s ease 0s 1 initAnimation;
+}
+
+.book:hover {
+  transform: rotate(0deg);
+}
+
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(5deg);
+  }
+  100% {
+    transform: rotateY(var(--rotate));
+  }
+}
+
+.book > :first-child {
+  position: absolute;
+  background: #0d47a1aa;
+  width: var(--width);
+  height: var(--height);
+  border-top-right-radius: var(--radii);
+  border-bottom-right-radius: var(--radii);
+  box-shadow: 5px 5px 10px rgba(0,0,0,.35);
+}
+
+.book::before {
+  content: ' ';
+  background: #fff;
+  height: calc(var(--height) - 2 * 3px);
+  width: 50px;
+  top: 3px;
+  position: absolute;
+  transform: translateX(calc(var(--width) - 50px / 2 - 3px)) rotateY(90deg) translateX(calc(50px / 2))
+}
+
+.book::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  width: var(--width);
+  height: var(--height);
+  border-top-right-radius: var(--radii);
+  border-bottom-right-radius: var(--radii);
+  background: #01060f;
+  transform: translateZ(-50px);
+  box-shadow: -10px 0 50px 10px rgba(0,0,0,.5);
+}
