@@ -71,3 +71,42 @@
   transform: translateZ(-50px);
   box-shadow: -10px 0 50px 10px rgba(0,0,0,.5);
 }
+
+@media only screen and (max-width: 900px) {
+  .book-container {
+    --height: 450px;
+    --width: 330px;
+    --rotate: -23deg;
+    --radii: 5px;
+  }
+
+  .book {
+    margin-left: -10vw;
+    animation: none;
+  }
+
+  .book-container {
+    margin: 50px 30px -40px;
+  }
+
+  .book:hover {
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .book-container {
+    --height: 320px;
+    --width: 240px;
+    --rotate: -23deg;
+    --radii: 5px;
+  }
+
+  .book {
+    margin-left: -8vw;
+  }
+
+  .book-container {
+    margin: 40px 30px -30px;
+  }
+}

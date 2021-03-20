@@ -22,6 +22,10 @@ html {
   animation: smoothscroll1 1s;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html:focus-within {
   animation-name: smoothscroll2;
   scroll-behavior: smooth;
@@ -42,6 +46,7 @@ a {
 .wrapper {
   max-width: 100%;
   width: 1024px;
+  padding: 0 2rem;
   margin: 0 auto;
 
   &--stage {
@@ -95,7 +100,7 @@ a {
 }
 
 .o-list {
-  //list-style-type: armenian;
+  padding-left: 1.3rem;
 }
 
 .toc ol ol {
@@ -144,7 +149,7 @@ a {
 
 .main-headline {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   line-height: 1;
   font-weight: 800;
 }
@@ -155,8 +160,9 @@ a {
 
 .main-buttons {
 
-  .btn--cta {
-    margin-left: 1rem;
+  .btn {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 
     svg {
       margin-left: 1ch;
@@ -164,19 +170,27 @@ a {
   }
 }
 
+ol, ul {
+  li {
+    line-height: 1.9;
+  }
+}
+
 h2 {
   font-weight: 800;
   font-size: 2.4rem;
   margin-bottom: 0;
+  line-height: 1;
 }
 
 h3 {
-  margin-bottom: .25em;
   color: #484848;
   background: rgba(#c1e6d8, .15) linear-gradient(#fff, rgba(#9feebf, .35));
   display: inline-block;
   padding: 0 1ch;
   transform: rotate(-1deg);
+  line-height: 1.3;
+  margin-bottom: .75rem;
 }
 
 .visually-hidden {
@@ -196,7 +210,7 @@ h3 {
 .features {
   margin: 2.5rem 0 3rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 
   li {
     display: inline-block;
@@ -314,3 +328,5 @@ footer {
     margin-left: 0;
   }
 }
+
+@import "mq.scss";
