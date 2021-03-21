@@ -1,6 +1,6 @@
 .book-container {
   --height: 550px;
-  --width: 420px;
+  --width: 425px;
   --rotate: -27deg;
   --radii: 5px;
 }
@@ -39,7 +39,7 @@
 }
 .book > :first-child {
   position: absolute;
-  background: #0d47a1aa;
+  background: #47c18d;
   width: var(--width);
   height: var(--height);
   border-top-right-radius: var(--radii);
