@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <title>Accessible Vue – The Why and How of building inclusive apps in Vue.js</title>
     <link rel="stylesheet" href="/style.6b54f5b7.css">
-    <link rel="stylesheet" href="https://use.typekit.net/ptn2bbq.css">
+
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin="">
+    <link rel="preload" as="style" href="https://use.typekit.net/ptn2bbq.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ptn2bbq.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://use.typekit.net/ptn2bbq.css">
+    </noscript>
+    
     <link rel="icon" type="image/png" href="/favicon-32x32.43b30f10.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/favicon-16x16.442c5440.png" sizes="16x16">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
@@ -23,9 +30,9 @@
             </p>
 
             <ul class="o-list o-list--bare main-buttons">
-                <li><a href="#0" class="btn btn--sample" onclick="_paq.push(['trackEvent', 'Sample']);">Read Sample Chapter <span class="visually-hidden">(PDF)</span></a>
+                <li><a href="#0" class="btn btn--sample" onclick="_paq.push(['trackEvent', 'click', 'onSample']);">Read Sample Chapter <span class="visually-hidden">(PDF)</span></a>
                 </li>
-                <li><a href="#buy" class="btn btn--cta" onclick="_paq.push(['trackEvent', 'To Leanpub']);">Buy the book
+                <li><a href="#buy" class="btn btn--cta" onclick="_paq.push(['trackEvent', 'click', 'toLeanpub']);">Buy the book
                     <svg role="presentation" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="10" cy="20.5" r="1"></circle>
                         <circle cx="18" cy="20.5" r="1"></circle>
@@ -220,7 +227,7 @@
                     <li>All future updates included</li>
                     <li>DRM-free PDF, mobi, and epub formats</li>
                 </ul>
-                <a href="https://leanpub.com/accessible-vue" onclick="_paq.push(['trackEvent', 'To Leanpub']);" class="link">Purchase on leanpub.com <span aria-hidden="true"> → </span><span class="visually-hidden">, external link.</span> </a>
+                <a href="https://leanpub.com/accessible-vue" onclick="_paq.push(['trackEvent', 'click', 'toLeanpub']);" class="link">Purchase on leanpub.com <span aria-hidden="true"> → </span><span class="visually-hidden">, external link.</span> </a>
             </div>
         </div>
     </article>
