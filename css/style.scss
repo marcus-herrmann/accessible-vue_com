@@ -330,4 +330,14 @@ footer {
   }
 }
 
+.leanpub-note {
+  font-size: 85%;
+
+  p {
+    margin-top: 0;
+    font-style: italic;
+    margin-bottom: 2em;
+  }
+}
+
 @import "mq.scss";
