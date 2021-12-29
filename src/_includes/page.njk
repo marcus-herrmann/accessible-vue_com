@@ -1,0 +1,22 @@
+{% include "partials/htmlhead.njk" %}
+<div class="booktext">
+<header class="stage">
+<div class="wrapper">
+  <a href="/read" class="title">Read Accessible Vue</a> <h1>{{ title }}</h1>
+</div>
+</header>
+<main class="wrapper">
+{% block content %}
+  {{ content | safe }}
+  {% include "partials/pagelist.njk" %}
+{% endblock %}
+
+  <small>&copy; 2021</small>
+</main>
+  <footer> <div class="wrapper"> <ul class="footer-nav o-list o-list--bare"> <li class="legal"><a href="https://marcus-herrmann.com/en/impressum-datenschutz">Legal / Impressum <span class="visually-hidden">, external link</span></a></li> <li><a href="https://marcus.io">My blog<span class="visually-hidden">, external link</span></a></li> <li><a class="hire" href="https://marcus-herrmann.com/en">Hire me<span class="visually-hidden">, external link</span></a></li> </ul> </div> </footer>
+</div>
+<script>
+  window.Prism = window.Prism || {};
+  window.Prism.manual = true;
+</script>
+{% include "partials/htmlfoot.njk" %}

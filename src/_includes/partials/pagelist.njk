@@ -1,0 +1,6 @@
+<ul>
+    {%- for chapter in collections.chapter -%}
+        <li><a href="{{ chapter.url }}">{{ chapter.data.title }}</a></li>
+    {%- endfor -%}
+</ul>
+
